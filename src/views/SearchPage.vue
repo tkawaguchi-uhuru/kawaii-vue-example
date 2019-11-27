@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- content -->
-    <search-box></search-box>
-    <result-list></result-list>
+    <search-box :searchStr="searchStr" @updated="updatedEvent"></search-box>
+    <result-list :searchStr="searchStr"></result-list>
   </div>
 </template>
 
@@ -15,6 +15,16 @@ export default {
   components: {
     SearchBox,
     ResultList
+  },
+  data () {
+    return {
+      searchStr: 'oya'
+    }
+  },
+  methods: {
+    updatedEvent (v) {
+      this.searchStr = v
+    }
   }
 }
 </script>
