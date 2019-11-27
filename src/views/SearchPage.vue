@@ -1,7 +1,6 @@
 <template>
   <div>
     <!-- content -->
-    検索画面の土台です
     <search-box></search-box>
     <result-list></result-list>
   </div>
