@@ -1,12 +1,22 @@
 <template>
-  <div>検索ボックス</div>
+  <div class="p-search-box">
+    <input
+      id="searchBox"
+      v-model="searchStr"
+    >
+    <button class="material-icons p-search-box__icon">
+      search
+    </button>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'SearchBox',
   data () {
-    return {}
+    return {
+      searchStr: 'ほげ'
+    }
   }
 }
 </script>
