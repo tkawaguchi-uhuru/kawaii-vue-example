@@ -15,6 +15,10 @@ const routes = [
     component: Home
   },
   {
+    path: '/search',
+    component: () => import('../views/SearchPage.vue')
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
