@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="p-list">
-      <li v-for="item in searchResults" :key="item.id" class="p-list__item">
+      <li v-for="item in youTubeData" :key="item.id" class="p-list__item">
         <img :src="item.img" :alt="item.title">
         <h3 class="p-title">{{item.title}}</h3>
         <p class="p-text">{{item.body}}</p>
@@ -11,10 +11,15 @@
 </template>
 
 <script>
+import { ajaxActions } from '../utils/ajaxActions'
+
 export default {
   name: 'ResultList',
   data () {
     return {
+      youTubeData: [
+        { id: '1', title: 'title1', body: 'body1', img: 'img1' }
+      ],
       dummyData: [
         { id: 0, title: 'データ1', body: 'データ1の内容です。123', img: '' },
         { id: 1, title: 'データ2', body: 'データ2の内容です。456', img: '' },
@@ -25,6 +30,13 @@ export default {
   props: {
     searchStr: {
       type: String
+    }
+  },
+  watch: {
+    async searchStr () {
+      const res = await ajaxActions.queryYouTubeData(this.searchStr)
+      console.log('res= ', res)
+      this.youTubeData = res
     }
   },
   computed: {
