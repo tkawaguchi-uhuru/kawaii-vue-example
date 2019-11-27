@@ -2,7 +2,8 @@
   <div class="p-search-box">
     <input
       id="searchBox"
-      v-model="searchStr"
+      :value="searchStr"
+      @input="$emit('updated', $event.target.value)"
     >
     <button class="material-icons p-search-box__icon">
       search
@@ -14,8 +15,11 @@
 export default {
   name: 'SearchBox',
   data () {
-    return {
-      searchStr: 'ほげ'
+    return {}
+  },
+  props: {
+    searchStr: {
+      type: String
     }
   }
 }
