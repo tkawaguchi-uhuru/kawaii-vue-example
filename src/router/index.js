@@ -6,6 +6,10 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/menu',
+    component: () => import('../views/MenuPage.vue')
+  },
+  {
     path: '/',
     name: 'home',
     component: Home
