@@ -9,12 +9,40 @@
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body {
+  background: #fff;
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #212121;
+  word-break: break-all;
   text-align: center;
-  color: #2c3e50;
+}
+
+label,
+input {
+  border: none;
+  background: none;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background: none;
 }
 
 #nav {
