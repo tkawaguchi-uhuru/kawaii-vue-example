@@ -3,7 +3,7 @@
     <input
       id="searchBox"
       :value="searchStr"
-      @input="$emit('updated', $event.target.value)"
+      @change="$emit('updated', $event.target.value)"
     >
     <button class="material-icons p-search-box__icon">
       search
